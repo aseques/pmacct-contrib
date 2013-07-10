@@ -12,6 +12,10 @@ This system works by converting the output of sh ip bpg (either from quagga
 Quagga:
   vtysh -c "sh ip sum" | perl quagga_gen_as_network.pl
 
+To make the reload of the file dynamic, pmacctd needs to have configured the 
+ refresh_maps variable to true
+And then sending a USR2 signal will make it reload the file without stopping
+ collecting data (more info in http://wiki.pmacct.net/OfficialConfigKeys)
 
 ### Choosing the output format
 
